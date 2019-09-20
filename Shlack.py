@@ -1,12 +1,3 @@
-#433d7aebea@hellomail.fun
-#66e4696ccf@hellomail.fun
-#shelak
-#https://app.slack.com/client/TN1U3C7R8/CNGHBSK7Z
-#appID = 'AN37NCG1H'
-#ClientID = '749955415858.751260424051'
-#ClientSecret = 'f32c240c380850aec9c7d8431bf3d74c'
-#SingingSecret = '4304e33c12266c46ab85c13f1f527f5a'
-#VerificationToken = 'RHOzrTQETqyNmpO5WKD5bbsX'
 import slack, subprocess
 from getpass import getuser
 
