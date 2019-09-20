@@ -17,7 +17,6 @@ A python script is connected to the Slack group you made using the BotToken and 
 
 ## Things you need to do
 For this to work you must have the following:
-0. pip install slackclinet
 1. A Slack group.
 2. A Slack app.
 3. Add the app to the group.
@@ -29,6 +28,10 @@ For this to work you must have the following:
    - search:read
 6. Put the app 'OAuth Access Token' to 'oauth_token' and 'Bot User OAuth Access Token' to 'slack_token' in the code.
 7. Turn the py to exe if you think it's necessarily to achive your goals :-)
-
+8. This works on python 3.6 .. Also it needs Slack module which can be downloaded using:
+    ```
+    pip install slackclient
+    ```
+    
 ## Demo
 ![](Demo.gif)
