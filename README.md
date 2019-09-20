@@ -17,6 +17,7 @@ A python script is connected to the Slack group you made using the BotToken and 
 
 ## Things you need to do
 For this to work you must have the following:
+0. pip install slackclinet
 1. A Slack group.
 2. A Slack app.
 3. Add the app to the group.
