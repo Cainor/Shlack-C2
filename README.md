@@ -9,12 +9,11 @@ Shlack = Shell + Slack
 4. Supports multiple targets by creating a new channel for each target.
 
 ## How it works
-A python script is connected to the Slack group you made using the BotToken and the OauthToken, Doing the following:
-1. Create a channel for each victim using the 'hostname' and 'logged-in username' as part of the channel's name.
-2. Writes logs in "general" channel, about the creation of the channel.
-3. Now, the shell is ready to receive commands sent to the created channel. And only to the created channel.
-4. The shell will output the results as a message in the same group.
-5. (BAD) if you have multiple victims, any command in any group will be sent to all victims, and only the intended victim will execute it.
+A python script is connected to the Slack group you made using the BotToken and the OauthToken, doing the following:
+1. The script creates a new channel in Slack group. The channel name is created using "hostname_username".
+2. Keeps listening to commands sent through the created channel.
+3. Output of the command is sent back to you as a chat.
+4. (BAD) If you have multiple victims, the commands are sent to all victims. But only the inteded victim will execute the command.
 
 ## Things you need to do
 For this to work you must have the following:
