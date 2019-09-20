@@ -10,10 +10,11 @@ Shlack = Shell + Slack
 
 ## How it works
 A python script is connected to the Slack group you made using the BotToken and the OauthToken, Doing the following:
-1. Create a channel for each victim using the 'hostname' and 'logged-in username' as part of the channel name.
-2. Writes logs in "general" channel, about the creatation of the channel.
+1. Create a channel for each victim using the 'hostname' and 'logged-in username' as part of the channel's name.
+2. Writes logs in "general" channel, about the creation of the channel.
 3. Now, the shell is ready to receive commands sent to the created channel. And only to the created channel.
 4. The shell will output the results as a message in the same group.
+5. (BAD) if you have multiple victims, any command in any group will be sent to all victims, and only the intended victim will execute it.
 
 ## Things you need to do
 For this to work you must have the following:
