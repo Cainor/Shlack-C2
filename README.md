@@ -3,8 +3,8 @@ Make your Slack group a C2 server :)
 Shlack = Shell + Slack
 
 ## Features
-1. Traffic is HTTPS encrypted, using Slack crtificate.
-2. Your IP can only be tracked by Slack team.
+1. Traffic is HTTPS encrypted, using Slack's crtificate.
+2. Your IP can only be tracked by Slack's team.
 3. Supports Windows and Linux OS.
 4. Supports multiple targets by creating a new channel for each target.
 
