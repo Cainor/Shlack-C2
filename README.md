@@ -13,7 +13,7 @@ The payload connects to the Slack group you made using the BotToken and the Oaut
 1. The payload creates a new channel in Slack group. The channel name is created using "hostname_username".
 2. Keeps listening to commands sent through the created channel.
 3. Output of the command is sent back to you as a massege in the channel.
-4. **If you have multiple victims, the commands are sent to all victims. But only the inteded victim will execute the command.**
+4. **If you have multiple victims, the commands are sent to all victims. But only the intended victim will execute the command.**
 
 ## Requirments
 For this to work you must have the following:
