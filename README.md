@@ -5,8 +5,7 @@ Shlack = Shell + Slack
 ## Features
 1. Traffic is HTTPS encrypted, using Slack's crtificate.
 2. Your IP can only be tracked by Slack's team.
-3. Supports Windows and Linux OS. (Only the python version)
-4. Supports multiple targets by creating a new channel for each target.
+3. Supports multiple targets by creating a new channel for each target.
 
 ## How it works
 The payload connects to the Slack group you made using the BotToken and the OauthToken, doing the following:
@@ -26,6 +25,11 @@ For this to work you must have the following:
    - channels:write
    - bot
    - search:read
+   
+ ## Python vs C#
+ - Python supports Windows and Linux. C# Support only Windows.
+ - Python require "python 3.6" and slackclient module to be installed. C# requires .Net Framework 4.5
+ - Python size after turning it to exe is more than 10MB. C# size is 255KB.
 
 ## Demo
 ![](Demo.gif)
