@@ -5,19 +5,19 @@ Shlack = Shell + Slack
 ## Features
 1. Traffic is HTTPS encrypted, using Slack's crtificate.
 2. Your IP can only be tracked by Slack's team.
-3. Supports Windows and Linux OS.
+3. Supports Windows and Linux OS. (Only the python version)
 4. Supports multiple targets by creating a new channel for each target.
 
 ## How it works
-A python script is connected to the Slack group you made using the BotToken and the OauthToken, doing the following:
-1. The script creates a new channel in Slack group. The channel name is created using "hostname_username".
+The payload connects to the Slack group you made using the BotToken and the OauthToken, doing the following:
+1. The payload creates a new channel in Slack group. The channel name is created using "hostname_username".
 2. Keeps listening to commands sent through the created channel.
-3. Output of the command is sent back to you as a chat.
-4. (BAD) If you have multiple victims, the commands are sent to all victims. But only the inteded victim will execute the command.
+3. Output of the command is sent back to you as a massege in the channel.
+4. **If you have multiple victims, the commands are sent to all victims. But only the inteded victim will execute the command.**
 
-## Things you need to do
+## Requirments
 For this to work you must have the following:
-1. A Slack group.
+1. A Slack group. (Duhh!)
 2. A Slack app.
 3. Add the app to the group.
 4. Add the app to the channel created by the victim. (This is important so that the messages sent through the channel is received by the shell)
@@ -26,12 +26,6 @@ For this to work you must have the following:
    - channels:write
    - bot
    - search:read
-6. Put the app 'OAuth Access Token' to 'oauth_token' and 'Bot User OAuth Access Token' to 'slack_token' in the code.
-7. Turn the py to exe if you think it's necessarily to achive your goals :-)
-8. This works on python 3.6 .. Also it needs Slack module which can be downloaded using:
-    ```
-    pip install slackclient
-    ```
-    
+
 ## Demo
 ![](Demo.gif)
