@@ -1,4 +1,4 @@
-# Shlack
+# Shlack-C2
 Make your Slack group a C2 server :)
 Shlack = Shell + Slack
 
