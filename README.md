@@ -6,6 +6,7 @@ Shlack = Shell + Slack
 1. Traffic is HTTPS encrypted, using Slack's crtificate.
 2. Your IP can only be tracked by Slack's team.
 3. Supports multiple targets by creating a new channel for each target.
+4. Support uploading files from victim to Slack channel. (Download will be supported soon!)
 
 ## How it works
 The payload connects to the Slack group you made using the BotToken and the OauthToken, doing the following:
@@ -30,6 +31,17 @@ For this to work you must have the following:
  - Python supports Windows and Linux. C# Support only Windows.
  - Python require "python 3.6" and slackclient module to be installed. C# requires .Net Framework 4.5
  - Python size after turning it to exe is more than 10MB. C# size is 255KB.
+ 
+ ## Key words
+ To upload files:
+ ```
+ upload [path] 
+ ```
+ 
+ To terminate the paylaod:
+  ```
+  exit
+  ```
 
 ## Demo
 ![](Demo.gif)
