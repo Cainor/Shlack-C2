@@ -33,9 +33,14 @@ For this to work you must have the following:
  - Python size after turning it to exe is more than 10MB. C# size is 255KB.
  
  ## Key words
- To upload files:
+ To upload files from the victim to Slack channel:
  ```
  upload [path] 
+ ```
+ 
+ To download files to the victim:
+ ```
+ download [URL] [Path/Filename]
  ```
  
  To terminate the paylaod:
