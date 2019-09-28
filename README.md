@@ -6,7 +6,7 @@ Shlack = Shell + Slack
 1. Traffic is HTTPS encrypted, using Slack's crtificate.
 2. Your IP can only be tracked by Slack's team.
 3. Supports multiple targets by creating a new channel for each target.
-4. Support uploading files from victim to Slack channel. (Download will be supported soon!)
+4. Supports uploading and downloading files from and to the victim.
 
 ## How it works
 The payload connects to the Slack group you made using the BotToken and the OauthToken, doing the following:
